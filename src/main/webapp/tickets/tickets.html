@@ -1,0 +1,22 @@
+<link rel='stylesheet' type='text/css' href='/table.data.css'>
+<script type='text/JavaScript'>
+var timeout = 30000;
+
+function TimedRefresh( ) { 
+  var request = new XMLHttpRequest();
+
+  request.open("GET","/tickets.py");
+  request.addEventListener('load', function(event) {
+     if (request.status >= 200 && request.status < 300) {
+        document.getElementById("content_ticket").innerHTML = request.responseText;
+     } else {
+        console.warn(request.statusText, request.responseText);
+     }
+     setTimeout(TimedRefresh, timeout);
+  });
+  request.send();
+}
+</script>
+<BODY onload='JavaScript:setTimeout(TimedRefresh, 1);'>
+<div id="content_ticket"/>
+</BODY>

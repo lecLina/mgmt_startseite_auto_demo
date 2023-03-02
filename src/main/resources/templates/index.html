@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SD-WAN Overview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="JRE">
+    <link href="images/favicon.png" rel="icon">
+    <base target="_blank">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Table style-->
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+<div id="page">
+    <nav class="colorlib-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div id="colorlib-logo"><a>SD-WAN</a></div>
+                    </div>
+
+                    <div class="col-md-9 text-right menu-1">
+                        <ul>
+                            <li><a href="https://rport.velocloud.ta-systeme.com/dashboard">RPort</a></li>
+                            <li><a href="https://www.velocloud.ta-systeme.com/wiki/index.php/Hauptseite">Wiki</a></li>
+                            <li><a href="https://cmdb.velocloud.ta-systeme.com/cmdbuild/">CMDB</a></li>
+                            <li><a href="https://support.ta-systeme.com/">Tickets</a></li>
+                            <li><a href="https://www.velocloud.ta-systeme.com/door/login">Door</a></li>
+
+                            <li class="has-dropdown">
+                                <a href="">MGMT</a>
+                                <ul class="dropdown">
+                                    <li><a href="http://10.0.250.250/velocloud/">CheckMK</a></li>
+                                    <li><a href="https://rms.teltonika-networks.com/management">Teltonika RMS</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/fusiondirectory/">Ldap Mgmt</a></li>
+                                    <li><a href="https://pgadmin4.velocloud.ta-systeme.com/">PgAdmin4</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/cmdbuild_webgui/">CMDBuild Webgui - Test</a></li>
+                                    <li><a href="https://ta-foreman.ads.systeme.de/">Foreman</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/jasperserver/">Jasper Report</a></li>
+                                    <li><a href="http://10.0.250.243:4000/">Ansible AWX</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/grafana">Grafana</a></li>
+                                    <li><a href="https://sdwan-elasticsearch-1-kibana.velocloud.ta-systeme.com/">SDWAN Kibana</a></li>
+                                    <li><a href="https://portainer.velocloud.ta-systeme.com/">Portainer</a></li>
+                                    <li><a href="https://flowable-control.velocloud.ta-systeme.com/">Flowable Control</a></li>
+                                    <li><a href="https://keycloak.velocloud.ta-systeme.com/">Keycloak</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Doku</a>
+                                <ul class="dropdown">
+                                    <li><a href="https://code.vmware.com/apis/1045/velocloud-sdwan-vco-ap">Online Rest-Api Doc Vmware Code</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/documentation/">BPMN E-Prozess Dokumentation</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-dropdown">
+                                <a href="">Dev</a>
+                                <ul class="dropdown">
+                                    <li><a href="https://jenkins.velocloud.ta-systeme.com/">Jenkins</a></li>
+                                    <li><a href="https://nexus.velocloud.ta-systeme.com">Sonatype Nexus 3</a></li>
+                                    <li><a href="https://gitea.velocloud.ta-systeme.com/">Gitea</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/chronograf">Chronograf</a></li>
+                                    <li><a href="https://sdwan.atlassian.net/">Jira@Atlassian</a></li>
+                                    <li><a href="https://flowable.velocloud.ta-systeme.com/">PROD - Flowable Work</a></li>
+                                    <li><a href="https://flowable-test.velocloud.ta-systeme.com/">TEST - Flowable Work</a></li>
+                                    <li><a href="https://flowable-dev.velocloud.ta-systeme.com/">DEV - Flowable Work</a></li>
+                                    <li><a href="https://flowable-design-dev.velocloud.ta-systeme.com/">DEV - Flowable Designer</a></li>
+                                    <li><a href="https://flowable-kibana-dev.velocloud.ta-systeme.com/">DEV - Flowable Kibana</a></li>
+                                    <li><a href="https://flowable-kibana-test.velocloud.ta-systeme.com/">TEST - Flowable Kibana</a></li>
+                                    <li><a href="https://flowable-kibana.velocloud.ta-systeme.com/">PROD - Flowable Kibana</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-md-auto">
+                        <a href="/logout" class="btn btn-primary-e" target="_self">Logout</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="video-hero" style="height: 100px; background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
+        <div class="overlay"></div>
+    </section>
+
+    <div id="colorlib-contact">
+        <div class="search">
+            <input type="search" class="light-table-filter" data-table="sortable" placeholder=" Search">
+        </div>
+
+        <table class="sortable table">
+
+            <thead>
+            <tr>
+                <th class="text-left" id="tbl_id">ID</th>
+                <th class="text-left" id="tbl_customer">Customer (Abbreviation)</th>
+                <th class="text-left" id="tbl_agents">Deployer</th>
+                <th class="text-left" id="tbl_manager"> SD Manager</th>
+                <th class="text-left" id="tbl_inside_sales">Inside Sales</th>
+                <th class="text-left" id="tbl_finance"> Finance</th>
+                <th class="text-left" id="tbl_oob">CMK OOB</th>
+                <th class="text-left" id="tbl_inband">CMK Inband</th>
+                <th class="text-left" id="tbl_vci">VCO</th>
+                <th class="text-left" id="tbl_sso">VCO SSO Access</th>
+                <th class="text-left" id="tbl_doc">Documentation</th>
+            </tr>
+            </thead>
+            <tbody class="table-hover">
+
+            <tr>
+                <td class="text-left">1.statisch</td>
+                <td class="text-left">funktioniert</td>
+                <td class="text-left">now</td>
+                <td class="text-left">okay</td>
+                <td class="text-left">test1</td>
+                <td class="text-left">test hello</td>
+                <td class="text-left"><a href="http://10.0.1.254/poc_oob/">CMK OOB</a><br><a href="https://www.velocloud.ta-systeme.com/poc_v4_r/check_mk/">Rport OOB</a></td>
+                <td class="text-left"><a href="http://poc-inband.poc.velocloud.ta-systeme.com/poc_ext">CMK Inband</a></td>
+                <td class="text-left"><a href="https://VCO8-FRA1.velocloud.net/">VCO8-FRA1</a></td>
+                <td class="text-left"><img src="images/yes.png" width="30" height="30" alt="YES"></td>
+                <td class="text-left">-</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer id="colorlib-footer">
+        <div class="copy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.ta-systeme.com" target="_blank">JRE</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Main -->
+<script src="js/main.js"></script>
+<!-- Search -->
+<script src="js/search.js"></script>
+<!-- Sortable -->
+<script src="js/sorttable.js"></script>
+<!-- Modalbox -->
+<script src="js/modalbox.js"></script>
+</body>
+
+</html>

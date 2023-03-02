@@ -1,0 +1,29 @@
+pipeline {
+    agent {
+        label 'tua-docker-jdk11'
+    }
+    stages {
+        stage('Docker Build') {
+            steps { 
+                script {
+                    docker.withRegistry('https://container.velocloud.ta-systeme.com', 'detest') {
+                        def customImage = docker.build("de/mgmt-startseite", "-f ./docker/Dockerfile ./")
+                        /* Push the container to the custom Registry */
+                        customImage.push()
+                    }
+                }
+            }
+        }
+        stage('Kubernetes Deployment') {
+            steps {  
+                script {              
+                    kubernetesDeploy(
+                        kubeconfigId: 'kubernetes-global',
+                        configs: 'kubernetes/deployment.yaml',
+                        enableConfigSubstitution: true
+                    )       
+                }                                    
+            }
+        }
+    }
+}
