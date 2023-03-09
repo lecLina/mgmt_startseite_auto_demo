@@ -17,31 +17,40 @@ public class Service {
         public Service(WebClient.Builder webClientBuilder) {
             this.webClient = webClientBuilder.baseUrl("http://api.velocloud.ta-systeme.com:12000").build();
         }
-
+        //Url für die Kundenkarten aus der CmdBuild
         public CmdbData<CmdbCustomer> getCmdbCustomerData() {
-            WebClient.ResponseSpec testcmdbEins= this.webClient.get().uri("/api/v1/cmdb-api/classes/customers/cards").retrieve();
-            Mono<CmdbData<CmdbCustomer>> testcmdbzwei = testcmdbEins.bodyToMono(new ParameterizedTypeReference<CmdbData<CmdbCustomer>>(){});
+            WebClient.ResponseSpec cmbdData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/customers/cards").retrieve();
+            Mono<CmdbData<CmdbCustomer>> cmdbData2 = cmbdData1.bodyToMono(new ParameterizedTypeReference<CmdbData<CmdbCustomer>>(){});
             log.info("Getting CMDB Customer Data");
-             return testcmdbzwei.block();
+             return cmdbData2.block();
         }
+        //Url für die Cmk Kundendaten aus der CmdBuild
         public CmdbData<CmkServerData> getCmkCustomerData()  {
-            WebClient.ResponseSpec testcmkEins= this.webClient.get().uri("/api/v1/cmdb-api/domains/server_companies/relations").retrieve();
-            Mono<CmdbData<CmkServerData>> testcmkzwei = testcmkEins.bodyToMono(new ParameterizedTypeReference<CmdbData<CmkServerData>>(){});
-            return testcmkzwei.block();
+            WebClient.ResponseSpec cmkData1= this.webClient.get().uri("/api/v1/cmdb-api/domains/server_companies/relations").retrieve();
+            Mono<CmdbData<CmkServerData>> cmkData2 = cmkData1.bodyToMono(new ParameterizedTypeReference<CmdbData<CmkServerData>>(){});
+            log.info("Getting CMK Customer Data");
+            return cmkData2.block();
         }
+
+        //Url für die Vco Kundendaten aus der CmdBuild
         public CmdbData<VcoData> getVcoCustomerData() {
-            WebClient.ResponseSpec testvcoEins= this.webClient.get().uri("/api/v1/cmdb-api/classes/CustomerOnVco/cards/").retrieve();
-            Mono<CmdbData<VcoData>> testvcozwei = testvcoEins.bodyToMono(new ParameterizedTypeReference<CmdbData<VcoData>>(){});
-            return testvcozwei.block();
+            WebClient.ResponseSpec vcoData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/CustomerOnVco/cards/").retrieve();
+            Mono<CmdbData<VcoData>> vcoData2 = vcoData1.bodyToMono(new ParameterizedTypeReference<CmdbData<VcoData>>(){});
+            log.info("Getting VCO Customer Data");
+            return vcoData2.block();
         }
+        //Url für die CMK OOB Kundendaten aus der CmdBuild
         public CmdbData<MonitoringLink> getOOBCustomerData() {
-            WebClient.ResponseSpec testoobEins= this.webClient.get().uri("/api/v1/cmdb-api/classes/oob_server/cards/").retrieve();
-            Mono<CmdbData<MonitoringLink>> testoobzwei = testoobEins.bodyToMono(new ParameterizedTypeReference<CmdbData<MonitoringLink>>(){});
-            return testoobzwei.block();
+            WebClient.ResponseSpec oobData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/oob_server/cards/").retrieve();
+            Mono<CmdbData<MonitoringLink>> oobData2 = oobData1.bodyToMono(new ParameterizedTypeReference<CmdbData<MonitoringLink>>(){});
+            log.info("Getting CMK OOB Customer Data");
+            return oobData2.block();
         }
+        //Url für die CMK Inband Kundendaten aus der CmdBuild
         public CmdbData<MonitoringLink> getInbandCustomerData() {
-            WebClient.ResponseSpec testinbandEins= this.webClient.get().uri("/api/v1/cmdb-api/classes/inband_server/cards/").retrieve();
-            Mono<CmdbData<MonitoringLink>> testinbandzwei = testinbandEins.bodyToMono(new ParameterizedTypeReference<CmdbData<MonitoringLink>>(){});
-            return testinbandzwei.block();
+            WebClient.ResponseSpec inbandData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/inband_server/cards/").retrieve();
+            Mono<CmdbData<MonitoringLink>> inbandData2 = inbandData1.bodyToMono(new ParameterizedTypeReference<CmdbData<MonitoringLink>>(){});
+            log.info("Getting CMK Inband Customer Data");
+            return inbandData2.block();
         }
 }

@@ -1,5 +1,7 @@
 package velocloud.tasyteme.com.mgmt_startseite_auto_demo.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -21,13 +23,24 @@ public class Datenberechnung {
     @Autowired
     Service Service;
 
+    private static final Logger log = LoggerFactory.getLogger(Service.class);
     @Cacheable("rowData")
     public List<CustomerRowData> getrowData(){
         CmdbData<CmdbCustomer> customerData = Service.getCmdbCustomerData();
+        if (customerData.isSuccess() == false)
+            log.error("Connection to CmdBuild Customer Data failed");
         CmdbData<CmkServerData> cmkData = Service.getCmkCustomerData();
+        if (cmkData.isSuccess() == false)
+            log.error("Connection to CMK Server Data failed");
         CmdbData<VcoData> vcoData = Service.getVcoCustomerData();
+        if (vcoData.isSuccess() == false)
+            log.error("Connection to Vco Data failed");
         CmdbData<MonitoringLink> oobData = Service.getOOBCustomerData();
+        if (oobData.isSuccess() == false)
+            log.error("Connection to CMK OOB Data failed");
         CmdbData<MonitoringLink> inbandData = Service.getInbandCustomerData();
+        if (inbandData.isSuccess() == false)
+            log.error("Connection to CMK Inband Data failed");
 
         List<CustomerRowData> rowData = new LinkedList<CustomerRowData>();
 
