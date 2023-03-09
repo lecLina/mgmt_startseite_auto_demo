@@ -129,18 +129,35 @@
             </thead>
             <tbody class="table-hover">
 
-            <tr>
-                <td class="text-left"><ol></ol></td>
-                <td class="text-left">funktioniert</td>
-                <td class="text-left">now</td>
-                <td class="text-left">okay</td>
-                <td class="text-left">test1</td>
-                <td class="text-left">test hello</td>
-                <td class="text-left"><a href="http://10.0.1.254/poc_oob/">CMK OOB</a><br><a href="https://www.velocloud.ta-systeme.com/poc_v4_r/check_mk/">Rport OOB</a></td>
-                <td class="text-left"><a href="http://poc-inband.poc.velocloud.ta-systeme.com/poc_ext">CMK Inband</a></td>
-                <td class="text-left"><a href="https://VCO8-FRA1.velocloud.net/">VCO8-FRA1</a></td>
+            <tr th:each="row: ${Data}">
+                <td th:text="${row.getID()}"></td>
+                <td class="text-left"><div th:text="${row.getCustomer().get(0)}"/><div th:text= "${row.getCustomer().get(1)}"/></td>
+                <td class="text-left" th:text="${row.getDeployer()}"></td>
+                <td class="text-left" th:text="${row.getSDManager()}"></td>
+                <td class="text-left" th:text="${row.getInsideSales()}"></td>
+                <td class="text-left" th:text="${row.getFinance()}"></td>
+                <td class="text-left">
+                    <div th:each="oobrow: ${row.getOOB()}">
+                        <a th:if="${oobrow.get_OOB_Server_Type_code() == 'V4'}"
+                           th:href="${'http://' + oobrow.getIpv4() + '/' + oobrow.getCode()}">
+                            CMK OOB V4
+                        </a>
+                        <a th:if="${oobrow.get_OOB_Server_Type_code() == '<=V3'}"
+                           th:href="${'http://' + oobrow.getIpv4() + '/' + oobrow.getCode()}">
+                            CMK OOB V3
+                        </a>
+                        <a th:if="${oobrow.get_OOB_Server_Type_code() == 'RportV4'}"
+                           th:href="${'https://www.velocloud.ta-systeme.com/' + oobrow.getCode() + '/check_mk'}">
+                            RportV4
+                        </a>
+                    </div>
+                </td>
+                <td class="text-left">
+                    <div th:each="inbandrow: ${row.getInband()}">
+                        <a th:href="${'http://' + inbandrow.getIpv4() + '/' + inbandrow.getCode()}">CMK Inband</a></div></td>
+                <td class="text-left"><a th:href="${row.getVco()}" th:text="${row.getVcoDisplayName()}"></a></td>
                 <td class="text-left"><img src="images/yes.png" width="30" height="30" alt="YES"></td>
-                <td class="text-left">-</td>
+                <td class="text-left"><a th:href="${row.getDocumentation()}">Documentation</a></td>
             </tr>
             </tbody>
         </table>
@@ -152,7 +169,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p>
-                            Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.ta-systeme.com" target="_blank">JRE</a>
+                            Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.ta-systeme.com" target="_blank">LEC</a>
                         </p>
                     </div>
                 </div>
