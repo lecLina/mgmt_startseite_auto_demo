@@ -5,10 +5,13 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import velocloud.tasyteme.com.mgmt_startseite_auto_demo.model.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @org.springframework.stereotype.Service
 public class Service {
 
+        private static final Logger log = LoggerFactory.getLogger(Service.class);
         private final WebClient webClient;
 
         public Service(WebClient.Builder webClientBuilder) {
@@ -18,6 +21,7 @@ public class Service {
         public CmdbData<CmdbCustomer> getCmdbCustomerData() {
             WebClient.ResponseSpec testcmdbEins= this.webClient.get().uri("/api/v1/cmdb-api/classes/customers/cards").retrieve();
             Mono<CmdbData<CmdbCustomer>> testcmdbzwei = testcmdbEins.bodyToMono(new ParameterizedTypeReference<CmdbData<CmdbCustomer>>(){});
+            log.info("Getting CMDB Customer Data");
              return testcmdbzwei.block();
         }
         public CmdbData<CmkServerData> getCmkCustomerData()  {

@@ -25,33 +25,7 @@ public class anbindungHtml {
         return "index2";
     }
 
-    /*
-    @RequestMapping(value = "/test")
-    public String TestCall(){
-        CmdbData<CmdbCustomer> temptest = Service.getCmdbCustomerData();
-        return temptest.toString();
-    }
-    @RequestMapping(value = "/test2")
-    public String TestCall2(){
-        CmdbData<CmkServerData> temptest = Service.getCmkCustomerData();
-        return temptest.toString();
-    }
-    @RequestMapping(value = "/test3")
-    public String TestCall3(){
-        CmdbData<VcoData> temptest = Service.getVcoCustomerData();
-        return temptest.toString();
-    }
-    @RequestMapping(value = "/test4")
-    public String TestCall4(){
-        CmdbData<MonitoringLink> temptest = Service.getOOBCustomerData();
-        return temptest.toString();
-    }
-    @RequestMapping(value = "/test5")
-    public String TestCall5(){
-        CmdbData<MonitoringLink> temptest = Service.getInbandCustomerData();
-        return temptest.toString();
-    }
-    */
+    //Begriffe aus den Cmdbuild Cards:
     //Customer = Code & Description
     //Deployer = _RespTechnology_code
     //SD-Manager = _RespServiceDelivery_code
