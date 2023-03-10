@@ -14,6 +14,8 @@ public class SimpleCacheCustomizer
     @Override
     public void customize(ConcurrentMapCacheManager cacheManager) {
         List<String> tmp = new ArrayList<>();
+            
+        //TODO: Kommentar fehlt, warum rowData als CacheName gesetzt wird
         tmp.add("rowData");
         cacheManager.setCacheNames(tmp);
     }
