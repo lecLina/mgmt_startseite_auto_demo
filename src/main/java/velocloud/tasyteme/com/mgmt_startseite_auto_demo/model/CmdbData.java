@@ -5,6 +5,9 @@ import java.util.List;
 
 public class CmdbData<T> implements Serializable {
 
+    
+    //TODO: Bitte eine Beschreibung einbauen, aus welcher Klasse der CMDB diese Daten kommen und was die Felder in der CMDB dann auch bedeutet
+    
     List<T> data;
     CmdbMeta meta;
     boolean success;
