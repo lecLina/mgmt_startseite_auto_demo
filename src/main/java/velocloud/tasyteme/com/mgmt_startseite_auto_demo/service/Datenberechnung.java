@@ -24,6 +24,8 @@ public class Datenberechnung {
     Service Service;
 
     private static final Logger log = LoggerFactory.getLogger(Service.class);
+    
+    //TODO: Kommentar fehlt, was macht diese Methode getrowData
     @Cacheable("rowData")
     public List<CustomerRowData> getrowData(){
         CmdbData<CmdbCustomer> customerData = Service.getCmdbCustomerData();
@@ -42,6 +44,13 @@ public class Datenberechnung {
         if (inbandData.isSuccess() == false)
             log.error("Connection to CMK Inband Data failed");
 
+        //TODO: Fehlerbehandlung fehlt, was passiert, wenn isSuccess==false ist, oder wenn es eine exception gibt oder wenn keine Daten zurueckkommen
+        // Dann darf der Rest hier drunter nicht ausgefuerht werden, aber das Caching darf auch keinen fehlerhaften Inhalt greifen
+        
+        
+        //TODO: Raphaels API liefert noch eine andere Art von Fehler - solltes du mal provozieren (Frag Raphael) und dann explizit auch als Fehler 
+        // abfangen und behandeln
+        
         List<CustomerRowData> rowData = new LinkedList<CustomerRowData>();
 
         for( CmdbCustomer customer : customerData.getData() )
@@ -63,6 +72,7 @@ public class Datenberechnung {
             {
                 if (vcoRow.getCustomer() == cmdbCustomerId)
                 {
+                    //TODO: Magical Values bitte in die application.properties auslagern
                     tmp.setVco("https://" + vcoRow.get_VCO_description() + "/ta-systeme/#!/msp/customer/"+ vcoRow.getVcoCustomerId() +"/");
                     tmp.setVcoDisplayName(vcoRow.get_VCO_description());
                     break;
@@ -113,6 +123,8 @@ public class Datenberechnung {
             tmp.setID(tua_id);
 
             tmp.setVcoSSOAccess(false);
+            
+            //TODO: Magical Values bitte in die application.properties auslagern
             tmp.setDocumentation("https://www.velocloud.ta-systeme.com/wiki/index.php/Kategorie:" + customer.getCode());
 
             rowData.add(tmp);
@@ -124,6 +136,7 @@ public class Datenberechnung {
         return rowData;
     }
 
+    //TODO: Kommentar fehlt, was macht diese Methode?
     @CacheEvict(value = "rowData", allEntries = true)
     @Scheduled(fixedRate = 60*60*1000)
     public void emptydatarowCache(){
