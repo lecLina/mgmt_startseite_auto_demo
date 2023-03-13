@@ -16,6 +16,7 @@ public class SimpleCacheCustomizer
         List<String> tmp = new ArrayList<>();
             
         //TODO: Kommentar fehlt, warum rowData als CacheName gesetzt wird
+        //Mehre Daten werden gespeichert in einem.
         tmp.add("rowData");
         cacheManager.setCacheNames(tmp);
     }

@@ -24,21 +24,4 @@ public class anbindungHtml {
 
         return "index2";
     }
-
-    //Begriffe aus den Cmdbuild Cards:
-    //Customer = Code & Description
-    //Deployer = _RespTechnology_code
-    //SD-Manager = _RespServiceDelivery_code
-    //InsideSales = _RespSalesperson_code
-    //Finance = _RespFinance_code
-    //OOB & Inband = _sourceType und Link: _sourceDescription
-    // +_sourceCode: z.B "cwsboco-openvpn" wird so angegeben
-    //_destinationCode
-    //_destinationId
-    //_sourceId
-    //_VCO_description
-    //CustomerPrefix
-    //Customer
-    //VcoCustomerId
-
 }

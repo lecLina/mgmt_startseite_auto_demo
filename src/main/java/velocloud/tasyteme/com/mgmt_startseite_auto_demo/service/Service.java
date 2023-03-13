@@ -33,7 +33,7 @@ public class Service {
         
         //Url für die Kundenkarten aus der CmdBuild
         public CmdbData<CmdbCustomer> getCmdbCustomerData() {
-            
+
             WebClient.ResponseSpec cmbdData1= this.webClient.get().uri(cmdBuild_Url).retrieve();
             Mono<CmdbData<CmdbCustomer>> cmdbData2 = cmbdData1.bodyToMono(new ParameterizedTypeReference<CmdbData<CmdbCustomer>>(){});
             log.info("Getting CMDB Customer Data");
