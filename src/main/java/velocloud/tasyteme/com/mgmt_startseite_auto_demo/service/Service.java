@@ -1,6 +1,7 @@
 package velocloud.tasyteme.com.mgmt_startseite_auto_demo.service;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -11,29 +12,37 @@ import org.slf4j.LoggerFactory;
 @org.springframework.stereotype.Service
 public class Service {
 
+        @Value( "${cmdb.Url}" )
+        private String cmdBuild_Url;
+        @Value( "${cmk.Url}" )
+        private String cmk_Url;
+        @Value( "${vco.Url}" )
+        private String vco_Url;
+        @Value( "${cmkOOB.Url}" )
+        private String cmkOOB_Url;
+        @Value( "${cmkInband.Url}" )
+        private String cmkInband_Url;
+
         private static final Logger log = LoggerFactory.getLogger(Service.class);
         private final WebClient webClient;
 
-        public Service(WebClient.Builder webClientBuilder) {
-            //TODO: Magical Values bitte in die application.properties auslagern
-            this.webClient = webClientBuilder.baseUrl("http://api.velocloud.ta-systeme.com:12000").build();
+        public Service(WebClient.Builder webClientBuilder, @Value("${api.baseUrl}") String api_baseUrl) {
+            this.webClient = webClientBuilder.baseUrl(api_baseUrl).build();
         }
-        
-        //TODO: In den unten stehenden Funktionen machst du immer das gleiche. Kann man das konsolidieren/refaktorien, damit es
-        // nicht wie Copy&Paste Code aussieht?
+
         
         //Url für die Kundenkarten aus der CmdBuild
         public CmdbData<CmdbCustomer> getCmdbCustomerData() {
-            //TODO: Magical Values bitte in die application.properties auslagern
-            WebClient.ResponseSpec cmbdData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/customers/cards").retrieve();
+            
+            WebClient.ResponseSpec cmbdData1= this.webClient.get().uri(cmdBuild_Url).retrieve();
             Mono<CmdbData<CmdbCustomer>> cmdbData2 = cmbdData1.bodyToMono(new ParameterizedTypeReference<CmdbData<CmdbCustomer>>(){});
             log.info("Getting CMDB Customer Data");
              return cmdbData2.block();
         }
         //Url für die Cmk Kundendaten aus der CmdBuild
         public CmdbData<CmkServerData> getCmkCustomerData()  {
-            //TODO: Magical Values bitte in die application.properties auslagern
-            WebClient.ResponseSpec cmkData1= this.webClient.get().uri("/api/v1/cmdb-api/domains/server_companies/relations").retrieve();
+
+            WebClient.ResponseSpec cmkData1= this.webClient.get().uri(cmk_Url).retrieve();
             Mono<CmdbData<CmkServerData>> cmkData2 = cmkData1.bodyToMono(new ParameterizedTypeReference<CmdbData<CmkServerData>>(){});
             log.info("Getting CMK Customer Data");
             return cmkData2.block();
@@ -41,24 +50,24 @@ public class Service {
 
         //Url für die Vco Kundendaten aus der CmdBuild
         public CmdbData<VcoData> getVcoCustomerData() {
-            //TODO: Magical Values bitte in die application.properties auslagern
-            WebClient.ResponseSpec vcoData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/CustomerOnVco/cards/").retrieve();
+
+            WebClient.ResponseSpec vcoData1= this.webClient.get().uri(vco_Url).retrieve();
             Mono<CmdbData<VcoData>> vcoData2 = vcoData1.bodyToMono(new ParameterizedTypeReference<CmdbData<VcoData>>(){});
             log.info("Getting VCO Customer Data");
             return vcoData2.block();
         }
         //Url für die CMK OOB Kundendaten aus der CmdBuild
         public CmdbData<MonitoringLink> getOOBCustomerData() {
-            //TODO: Magical Values bitte in die application.properties auslagern
-            WebClient.ResponseSpec oobData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/oob_server/cards/").retrieve();
+
+            WebClient.ResponseSpec oobData1= this.webClient.get().uri(cmkOOB_Url).retrieve();
             Mono<CmdbData<MonitoringLink>> oobData2 = oobData1.bodyToMono(new ParameterizedTypeReference<CmdbData<MonitoringLink>>(){});
             log.info("Getting CMK OOB Customer Data");
             return oobData2.block();
         }
         //Url für die CMK Inband Kundendaten aus der CmdBuild
         public CmdbData<MonitoringLink> getInbandCustomerData() {
-            //TODO: Magical Values bitte in die application.properties auslagern
-            WebClient.ResponseSpec inbandData1= this.webClient.get().uri("/api/v1/cmdb-api/classes/inband_server/cards/").retrieve();
+
+            WebClient.ResponseSpec inbandData1= this.webClient.get().uri(cmkInband_Url).retrieve();
             Mono<CmdbData<MonitoringLink>> inbandData2 = inbandData1.bodyToMono(new ParameterizedTypeReference<CmdbData<MonitoringLink>>(){});
             log.info("Getting CMK Inband Customer Data");
             return inbandData2.block();
