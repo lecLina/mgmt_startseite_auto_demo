@@ -3,8 +3,12 @@ package velocloud.tasyteme.com.mgmt_startseite_auto_demo.model;
 import javax.swing.*;
 import java.util.List;
 
+
+//TODO: Was ist die Aufgabe dieser Klasse, sie hat ja keinen direkten Bezug zur CMDB
 public class CustomerRowData {
 
+    
+    //TODO: Was bedeuten die einzelnen Felder, wo und wie werden sie verwendet
     int ID;
     List<String> Customer;
     String Deployer;
