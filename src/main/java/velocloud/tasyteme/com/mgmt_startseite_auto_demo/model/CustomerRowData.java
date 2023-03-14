@@ -7,7 +7,7 @@ import java.util.List;
 //TODO: Was ist die Aufgabe dieser Klasse, sie hat ja keinen direkten Bezug zur CMDB
 public class CustomerRowData {
 
-    
+
     //TODO: Was bedeuten die einzelnen Felder, wo und wie werden sie verwendet
     int ID;
     List<String> Customer;
@@ -19,7 +19,7 @@ public class CustomerRowData {
     List<MonitoringLink> Inband;
     String Vco;
     String VcoDisplayName;
-    boolean VcoSSOAccess;
+    String VcoSSOAccess;
     String Documentation;
 
     public int getID() {
@@ -34,9 +34,7 @@ public class CustomerRowData {
         return Customer;
     }
 
-    public void setCustomer(List<String> customer) {
-        Customer = customer;
-    }
+    public void setCustomer(List<String> customer) {Customer = customer;}
 
     public String getDeployer() {
         return Deployer;
@@ -102,11 +100,11 @@ public class CustomerRowData {
         VcoDisplayName = vcoDisplayName;
     }
 
-    public boolean isVcoSSOAccess() {
+    public String getVcoSSOAccess() {
         return VcoSSOAccess;
     }
 
-    public void setVcoSSOAccess(boolean vcoSSOAccess) {
+    public void setVcoSSOAccess(String vcoSSOAccess) {
         VcoSSOAccess = vcoSSOAccess;
     }
 

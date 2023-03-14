@@ -14,9 +14,8 @@ public class SimpleCacheCustomizer
     @Override
     public void customize(ConcurrentMapCacheManager cacheManager) {
         List<String> tmp = new ArrayList<>();
-            
-        //TODO: Kommentar fehlt, warum rowData als CacheName gesetzt wird
-        //Mehre Daten werden gespeichert in einem.
+
+        //Daten aus mehreren Klassen werden in der rowData (Daten für die einzelnen Reihen) gespeichert und diese wird dann nur stündlich abgerufen(Cache)
         tmp.add("rowData");
         cacheManager.setCacheNames(tmp);
     }

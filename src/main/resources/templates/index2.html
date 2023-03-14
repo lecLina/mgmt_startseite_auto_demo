@@ -49,16 +49,21 @@
                                 <ul class="dropdown">
                                     <li><a href="http://10.0.250.250/velocloud/">CheckMK</a></li>
                                     <li><a href="https://rms.teltonika-networks.com/management">Teltonika RMS</a></li>
-                                    <li><a href="https://www.velocloud.ta-systeme.com/fusiondirectory/">Ldap Mgmt</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/fusiondirectory/">Ldap Mgmt</a>
+                                    </li>
                                     <li><a href="https://pgadmin4.velocloud.ta-systeme.com/">PgAdmin4</a></li>
-                                    <li><a href="https://www.velocloud.ta-systeme.com/cmdbuild_webgui/">CMDBuild Webgui - Test</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/cmdbuild_webgui/">CMDBuild Webgui
+                                        - Test</a></li>
                                     <li><a href="https://ta-foreman.ads.systeme.de/">Foreman</a></li>
-                                    <li><a href="https://www.velocloud.ta-systeme.com/jasperserver/">Jasper Report</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/jasperserver/">Jasper Report</a>
+                                    </li>
                                     <li><a href="http://10.0.250.243:4000/">Ansible AWX</a></li>
                                     <li><a href="https://www.velocloud.ta-systeme.com/grafana">Grafana</a></li>
-                                    <li><a href="https://sdwan-elasticsearch-1-kibana.velocloud.ta-systeme.com/">SDWAN Kibana</a></li>
+                                    <li><a href="https://sdwan-elasticsearch-1-kibana.velocloud.ta-systeme.com/">SDWAN
+                                        Kibana</a></li>
                                     <li><a href="https://portainer.velocloud.ta-systeme.com/">Portainer</a></li>
-                                    <li><a href="https://flowable-control.velocloud.ta-systeme.com/">Flowable Control</a></li>
+                                    <li><a href="https://flowable-control.velocloud.ta-systeme.com/">Flowable
+                                        Control</a></li>
                                     <li><a href="https://keycloak.velocloud.ta-systeme.com/">Keycloak</a></li>
                                 </ul>
                             </li>
@@ -66,8 +71,10 @@
                             <li class="has-dropdown">
                                 <a href="">Doku</a>
                                 <ul class="dropdown">
-                                    <li><a href="https://code.vmware.com/apis/1045/velocloud-sdwan-vco-ap">Online Rest-Api Doc Vmware Code</a></li>
-                                    <li><a href="https://www.velocloud.ta-systeme.com/documentation/">BPMN E-Prozess Dokumentation</a></li>
+                                    <li><a href="https://code.vmware.com/apis/1045/velocloud-sdwan-vco-ap">Online
+                                        Rest-Api Doc Vmware Code</a></li>
+                                    <li><a href="https://www.velocloud.ta-systeme.com/documentation/">BPMN E-Prozess
+                                        Dokumentation</a></li>
                                 </ul>
                             </li>
 
@@ -79,13 +86,20 @@
                                     <li><a href="https://gitea.velocloud.ta-systeme.com/">Gitea</a></li>
                                     <li><a href="https://www.velocloud.ta-systeme.com/chronograf">Chronograf</a></li>
                                     <li><a href="https://sdwan.atlassian.net/">Jira@Atlassian</a></li>
-                                    <li><a href="https://flowable.velocloud.ta-systeme.com/">PROD - Flowable Work</a></li>
-                                    <li><a href="https://flowable-test.velocloud.ta-systeme.com/">TEST - Flowable Work</a></li>
-                                    <li><a href="https://flowable-dev.velocloud.ta-systeme.com/">DEV - Flowable Work</a></li>
-                                    <li><a href="https://flowable-design-dev.velocloud.ta-systeme.com/">DEV - Flowable Designer</a></li>
-                                    <li><a href="https://flowable-kibana-dev.velocloud.ta-systeme.com/">DEV - Flowable Kibana</a></li>
-                                    <li><a href="https://flowable-kibana-test.velocloud.ta-systeme.com/">TEST - Flowable Kibana</a></li>
-                                    <li><a href="https://flowable-kibana.velocloud.ta-systeme.com/">PROD - Flowable Kibana</a></li>
+                                    <li><a href="https://flowable.velocloud.ta-systeme.com/">PROD - Flowable Work</a>
+                                    </li>
+                                    <li><a href="https://flowable-test.velocloud.ta-systeme.com/">TEST - Flowable
+                                        Work</a></li>
+                                    <li><a href="https://flowable-dev.velocloud.ta-systeme.com/">DEV - Flowable Work</a>
+                                    </li>
+                                    <li><a href="https://flowable-design-dev.velocloud.ta-systeme.com/">DEV - Flowable
+                                        Designer</a></li>
+                                    <li><a href="https://flowable-kibana-dev.velocloud.ta-systeme.com/">DEV - Flowable
+                                        Kibana</a></li>
+                                    <li><a href="https://flowable-kibana-test.velocloud.ta-systeme.com/">TEST - Flowable
+                                        Kibana</a></li>
+                                    <li><a href="https://flowable-kibana.velocloud.ta-systeme.com/">PROD - Flowable
+                                        Kibana</a></li>
                                 </ul>
                             </li>
 
@@ -101,7 +115,9 @@
         </div>
     </nav>
 
-    <section id="home" class="video-hero" style="height: 100px; background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
+    <section id="home" class="video-hero"
+             style="height: 100px; background-size:cover; background-position: center center;background-attachment:fixed;"
+             data-section="home">
         <div class="overlay"></div>
     </section>
 
@@ -131,7 +147,10 @@
 
             <tr th:each="row: ${Data}">
                 <td th:text="${row.getID()}"></td>
-                <td class="text-left"><div th:text="${row.getCustomer().get(0)}"/><div th:text= "${row.getCustomer().get(1)}"/></td>
+                <td class="text-left">
+                    <div th:text="${row.getCustomer().get(0)}"/>
+                    <div th:text="${row.getCustomer().get(1)}"/>
+                </td>
                 <td class="text-left" th:text="${row.getDeployer()}"></td>
                 <td class="text-left" th:text="${row.getSDManager()}"></td>
                 <td class="text-left" th:text="${row.getInsideSales()}"></td>
@@ -148,15 +167,19 @@
                         </a>
                         <a th:if="${oobrow.get_OOB_Server_Type_code() == 'RportV4'}"
                            th:href="${'https://www.velocloud.ta-systeme.com/' + oobrow.getCode() + '/check_mk'}">
-                            RportV4
+                            Rport OOB
                         </a>
                     </div>
+                    <div th:if="${row.getOOB().isEmpty()}"> -</div>
                 </td>
                 <td class="text-left">
                     <div th:each="inbandrow: ${row.getInband()}">
-                        <a th:href="${'http://' + inbandrow.getIpv4() + '/' + inbandrow.getCode()}">CMK Inband</a></div></td>
+                        <a th:href="${'http://' + inbandrow.getIpv4() + '/' + inbandrow.getCode()}">CMK Inband</a></div>
+                    <div th:if="${row.getInband().isEmpty()}"> -</div>
+                </td>
                 <td class="text-left"><a th:href="${row.getVco()}" th:text="${row.getVcoDisplayName()}"></a></td>
-                <td class="text-left"><img src="images/yes.png" width="30" height="30" alt="YES"></td>
+                <td class="text-left"><img th:src="@{${'/images/' + row.getVcoSSOAccess() }}" width="30" height="30"/>
+                </td>
                 <td class="text-left"><a th:href="${row.getDocumentation()}">Documentation</a></td>
             </tr>
             </tbody>
@@ -169,7 +192,8 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p>
-                            Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://www.ta-systeme.com" target="_blank">LEC</a>
+                            Made with <i class="icon-heart" aria-hidden="true"></i> by <a
+                                href="https://www.ta-systeme.com" target="_blank">LEC</a>
                         </p>
                     </div>
                 </div>

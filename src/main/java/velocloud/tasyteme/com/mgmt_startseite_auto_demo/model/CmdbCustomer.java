@@ -4,17 +4,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CmdbCustomer {
 
-    //TODO: Bitte eine Beschreibung einbauen, aus welcher Klasse der CMDB diese Daten kommen und was die Felder in der CMDB dann auch bedeutet
-    
+    //Die Daten kommen aus der Customer Card in der CmdBuild
+    //für jeden Kunden die verschiedenen Felder
+
     int _id;
+    //_id = Allgemeine Customer Id
     @JsonProperty("Code")
     String Code;
+    //Code = kürzel vom Kunden
     @JsonProperty("Description")
     String Description;
+    //Description = Ausgeschriebener Kundenname
+    @JsonProperty("NoSDWAN")
+    boolean NoSDWAN;
+    //True = Kein SDWAN Kunde und false = SDWAN Kunde
+    @JsonProperty("AccessSSO")
+    boolean AccessSSO;
+    //true = es gibt ein VCO SSO Access oder false = es gibt keinen
     String _RespTechnology_code;
+    //Deployer (Kürzel)
     String _RespServiceDelivery_code;
+    //SD Manager (Kürzel)
     String _RespSalesperson_code;
+    //Inside Sales Zuständiger (Kürzel)
     String _RespFinance_code;
+    //Finance Zuständiger (Kürzel)
 
     public int get_id() {
         return _id;
@@ -23,6 +37,7 @@ public class CmdbCustomer {
     public void set_id(int _id) {
         this._id = _id;
     }
+
     public String getCode() {
         return Code;
     }
@@ -37,6 +52,22 @@ public class CmdbCustomer {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public boolean isNoSDWAN() {
+        return NoSDWAN;
+    }
+
+    public void setNoSDWAN(boolean noSDWAN) {
+        NoSDWAN = noSDWAN;
+    }
+
+    public boolean isAccessSSO() {
+        return AccessSSO;
+    }
+
+    public void setAccessSSO(boolean accessSSO) {
+        AccessSSO = accessSSO;
     }
 
     public String get_RespTechnology_code() {
