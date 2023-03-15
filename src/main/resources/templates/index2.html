@@ -130,7 +130,6 @@
 
             <thead>
             <tr>
-                <th class="text-left" id="tbl_id">ID</th>
                 <th class="text-left" id="tbl_customer">Customer (Abbreviation)</th>
                 <th class="text-left" id="tbl_agents">Deployer</th>
                 <th class="text-left" id="tbl_manager"> SD Manager</th>
@@ -146,7 +145,6 @@
             <tbody class="table-hover">
 
             <tr th:each="row: ${Data}">
-                <td th:text="${row.getID()}"></td>
                 <td class="text-left">
                     <div th:text="${row.getCustomer().get(0)}"/>
                     <div th:text="${row.getCustomer().get(1)}"/>
