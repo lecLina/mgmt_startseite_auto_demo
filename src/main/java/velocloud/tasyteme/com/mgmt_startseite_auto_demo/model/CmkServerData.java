@@ -1,8 +1,13 @@
 package velocloud.tasyteme.com.mgmt_startseite_auto_demo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CmkServerData {
 
     //TODO: Bitte eine Beschreibung einbauen, aus welcher Klasse der CMDB diese Daten kommen und was die Felder in der CMDB dann auch bedeutet
+
+    @JsonProperty("Description")
+    String Description;
     int _id;
     String _sourceType;
     String _sourceDescription;
@@ -10,6 +15,14 @@ public class CmkServerData {
     String _destinationCode;
     int _destinationId;
     int _sourceId;
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
 
     public int get_id() {
         return _id;

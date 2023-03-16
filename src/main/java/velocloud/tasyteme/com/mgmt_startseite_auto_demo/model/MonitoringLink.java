@@ -12,6 +12,8 @@ public class MonitoringLink {
     String ipv4;
     @JsonProperty("Code")
     String Code;
+    @JsonProperty("Description")
+    String Description;
     String _state_code;
 
     public int get_id() {
@@ -52,6 +54,14 @@ public class MonitoringLink {
 
     public void setCode(String code) {
         Code = code;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 
     public String get_state_code() {
