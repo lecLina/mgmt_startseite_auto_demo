@@ -75,6 +75,7 @@
                                         Rest-Api Doc Vmware Code</a></li>
                                     <li><a href="https://www.velocloud.ta-systeme.com/documentation/">BPMN E-Prozess
                                         Dokumentation</a></li>
+                                    <li><a href="/alt.html">Alte SDWAN Startseite</a></li>
                                 </ul>
                             </li>
 
@@ -130,15 +131,15 @@
 
             <thead>
             <tr>
-                <th class="text-left" id="tbl_customer">Customer (Abbreviation)</th>
+                <th class="text-left" id="tbl_customer">Customer&nbsp;(Abbreviation)</th>
                 <th class="text-left" id="tbl_agents">Deployer</th>
-                <th class="text-left" id="tbl_manager"> SD Manager</th>
-                <th class="text-left" id="tbl_inside_sales">Inside Sales</th>
+                <th class="text-left" id="tbl_manager"> SD&nbsp;Manager</th>
+                <th class="text-left" id="tbl_inside_sales">Inside&nbsp;Sales</th>
                 <th class="text-left" id="tbl_finance"> Finance</th>
-                <th class="text-left" id="tbl_oob">CMK OOB</th>
-                <th class="text-left" id="tbl_inband">CMK Inband</th>
+                <th class="text-left" id="tbl_oob">CMK&nbsp;OOB</th>
+                <th class="text-left" id="tbl_inband">CMK&nbsp;Inband</th>
                 <th class="text-left" id="tbl_vci">VCO</th>
-                <th class="text-left" id="tbl_sso">VCO SSO Access</th>
+                <th class="text-left" id="tbl_sso">VCO&nbsp;SSO&nbsp;Access</th>
                 <th class="text-left" id="tbl_doc">Documentation</th>
             </tr>
             </thead>
@@ -157,22 +158,22 @@
                     <div th:each="oobrow: ${row.getOOB()}">
                         <a th:if="${oobrow.get_OOB_Server_Type_code() == 'V4'}"
                            th:href="${'http://' + oobrow.getIpv4() + '/' + oobrow.getCode()}">
-                            CMK OOB V4
+                            CMK&nbsp;OOB&nbsp;V4
                         </a>
                         <a th:if="${oobrow.get_OOB_Server_Type_code() == '<=V3'}"
                            th:href="${'http://' + oobrow.getIpv4() + '/' + oobrow.getCode()}">
-                            CMK OOB V3
+                            CMK&nbsp;OOB&nbsp;V3
                         </a>
                         <a th:if="${oobrow.get_OOB_Server_Type_code() == 'RportV4'}"
                            th:href="${'https://www.velocloud.ta-systeme.com/' + oobrow.getCode() + '/check_mk'}">
-                            Rport OOB
+                            Rport&nbsp;OOB
                         </a>
                     </div>
                     <div th:if="${row.getOOB().isEmpty()}"> -</div>
                 </td>
                 <td class="text-left">
                     <div th:each="inbandrow: ${row.getInband()}">
-                        <a th:href="${'http://' + inbandrow.getIpv4() + '/' + inbandrow.getCode()}">CMK Inband</a></div>
+                        <a th:href="${'http://' + inbandrow.getIpv4() + '/' + inbandrow.getCode()}">CMK&nbsp;Inband</a></div>
                     <div th:if="${row.getInband().isEmpty()}"> -</div>
                 </td>
                 <td class="text-left"><a th:href="${row.getVco()}" th:text="${row.getVcoDisplayName()}"></a></td>

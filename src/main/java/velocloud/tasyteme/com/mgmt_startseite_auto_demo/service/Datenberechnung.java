@@ -162,7 +162,7 @@ public class Datenberechnung {
         return rowData;
     }
 
-    //Das ist dewr Cache die rowData holt sich durch die Methode bewirkt das die Daten nur stündlich abgeholt werden dadurch dauert das laden nur noch ein paar ms
+    //Das ist der Cache die rowData holt sich durch die Methode bewirkt, dass die Daten nur stündlich abgeholt werden dadurch dauert das laden nur noch ein paar ms
     @CacheEvict(value = "rowData", allEntries = true)
     @Scheduled(fixedRate = 60 * 60 * 1000)
     public void emptydatarowCache() {
