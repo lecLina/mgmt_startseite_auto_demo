@@ -49,6 +49,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<imageName>container.velocloud.ta-systeme.com/startseite/mgmt_startseite_dyn:${project.version}</imageName>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
